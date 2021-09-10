@@ -1,0 +1,46 @@
+NAME
+	editor - edit files line by line
+
+SYNOPSIS
+	editor FILENAME
+
+DESCRIPTION
+	A program that allows the user to view and edit files line by line
+	File lines can be viewed by entering the line number
+	Commands are seperated by ---END---
+
+	:p prints the whole file
+
+	:n prints the whole file with line numbers
+ 
+	:d deletes the current line
+
+	:m# (# being a number) moves the current line
+	above the entered line number
+	:m$ to move the line to the end of the file
+
+	:i prompts for user input and inserts it above the current line
+	multiple lines can be entered however the input will be read until
+	a dot character is entered and the rest will be discarded
+
+	:a prompts for user input and inserts it below the current line
+	same rules as insert apply
+	the entered input has no effect on the current line neither for append
+	nor input
+
+	:w writes the edits on the filename given as argument to the program
+
+	:# with # being any number selects and prints that line. selected line will be printed
+	again after each command execution. if an unrecognized line is entered, program will say so.
+
+	:s substring
+	searches if the entered subsrting exists in the following lines, if found 
+	sets the current line to the found line, else doesn't change anything
+
+	:| command
+	runs a shell command and feeds the current line as input. sets the output to the current line
+	if an error occurs, doesn't change the current line value and prompts wrong command.	
+
+BUGS
+	if an unknown command is entered, the program will say line not found by default.
+
